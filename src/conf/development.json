@@ -1,0 +1,40 @@
+{
+  "hapi": {
+    "conf": {
+      "debug": {
+        "request": [
+          "error",
+          "uncaught"
+        ]
+      }
+    }
+  },
+
+  "API_PATH": "",
+
+  "googleMapAPIKey": "AIzaSyANKPGJ4MMIyXwcc1AdGSmQuJOuQwUPpRE",
+
+  "NODE_ENV": "development",
+
+  "appConfig": {
+  },
+
+  "vendorJs": [
+    "app/vendor/angular/angular.js",
+    "app/vendor/angular-ui-router/release/angular-ui-router.js",
+    "app/vendor/angular-bootstrap/ui-bootstrap-tpls.js",
+    "app/vendor/polyglot/build/polyglot.js"
+  ],
+  "appJs": [
+    "app/app.module.js",
+    "app/app.config.js",
+    "app/app.routes.js",
+
+    "app/modules/shared/services/service.module.js",
+    "app/modules/shared/services/polyglot.service.js",
+
+    "app/modules/dashboard/dashboard.module.js",
+    "app/modules/dashboard/dashboard.route.js",
+    "app/modules/dashboard/dashboard.controller.js"
+  ]
+}

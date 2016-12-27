@@ -1,0 +1,27 @@
+{
+  "name": "angular2experience",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "gile"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "angular"
+  ],
+  "homepage": "index",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-router": "^0.3.2",
+    "angular-bootstrap": "^2.3.1",
+    "polyglot": "^2.2.1",
+    "angular": "^1.6.1"
+  }
+}
