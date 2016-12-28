@@ -34,6 +34,12 @@ server.on('request-error', (request, err) => {
   debug(`Error response (500) sent for request: ${request.id} because: ${errMsg}`);
 });
 
-server.start(() => {
-  debug('Server running at:', server.info.uri);
+server.register(require('./plugins/i18n'), (err) => {
+  if (err) {
+    debug('Failed to initialize i18n');
+  }
+
+  server.start(() => {
+    debug('Server running at:', server.info.uri);
+  });
 });

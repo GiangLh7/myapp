@@ -39,15 +39,16 @@ function homePageHandler(request, reply) {
     attribs.translations = JSON.stringify(translations[lang]);
     reply.view('templates/home', attribs);
   }, () => {
+    attribs.translations = '{}';
     reply.view('templates/home', attribs);
   });
 }
 
 
 function angularViewsHandler(request, reply) {
-  reply.view(`public/scripts${request.path.replace('.html', '')}`, { appConfig });
+  reply.view(`app/${request.path.replace('.html', '')}`, { appConfig });
 }
 
 function angularLayoutsHandler(request, reply) {
-  reply.view(`public${request.path.replace('.html', '')}`);
+  reply.view(`app/${request.path.replace('.html', '')}`);
 }

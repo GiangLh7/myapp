@@ -33,8 +33,21 @@
     "app/modules/shared/services/service.module.js",
     "app/modules/shared/services/polyglot.service.js",
 
+    "app/modules/shared/filters/filters.module.js",
+    "app/modules/shared/filters/translate.filter.js",
+
+    "app/modules/main/main.controller.js",
+
     "app/modules/dashboard/dashboard.module.js",
     "app/modules/dashboard/dashboard.route.js",
-    "app/modules/dashboard/dashboard.controller.js"
+    "app/modules/dashboard/dashboard.controller.js",
+
+    "app/modules/book/book.module.js",
+    "app/modules/book/book.route.js",
+    "app/modules/book/book.controller.js",
+
+    "app/modules/brand/brand.module.js",
+    "app/modules/brand/brand.route.js",
+    "app/modules/brand/brand.controller.js"
   ]
 }

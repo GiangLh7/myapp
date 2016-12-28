@@ -1,0 +1,32 @@
+header.navbar.navbar-default
+  .container
+    div
+      button.navbar-toggle(type="button" ng-click='vm.navCollapsed = !vm.navCollapsed')
+        span.sr-only
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      .navbar-brand
+        a(ui-sref='main.dashboard')
+          img(src='app/assets/img/book-logo.png')
+
+    nav.navbar-collapse.collapse(ng-click='vm.navCollapsed = true' uib-collapse='vm.navCollapsed')
+      ul.nav.navbar-nav
+        li
+          a(ui-sref='main.dashboard' ui-sref-active='active') #{t('Dashboard')}
+        li
+          a(ui-sref='main.book' ui-sref-active='active') #{t('Books')}
+        li
+          a(ui-sref='main.brand' ui-sref-active='active') #{t('Brand')}
+div(ui-view='')
+footer
+  .container
+    .col-sm-6.col-xs-12.term-link
+      | &copy; <script>document.write(process.version);</script>
+      | All Rights Reserved.
+    .col-sm-6.col-xs-12
+      ul.row
+        li
+          a Terms and conditions
+        li
+          a Privacy policy

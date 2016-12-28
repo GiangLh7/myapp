@@ -20,6 +20,8 @@ function  isLanguageEmbeddedIntoUrl(url) {
   return isLocaleSupported(language) ? language : null;
 }
 
+exports.isLanguageEmbeddedIntoUrl = isLanguageEmbeddedIntoUrl;
+
 exports.detectLanguage = (request) => {
   // 1. Take embedded lang from url
   const embeddedLang = isLanguageEmbeddedIntoUrl(request.url.path);
@@ -44,7 +46,7 @@ exports.detectLanguage = (request) => {
   }
 
   return defaultLang;
-}
+};
 
 exports.getTranslations = (type) => {
   return new Promise((resolve, reject) => {
@@ -56,7 +58,7 @@ exports.getTranslations = (type) => {
       resolve(dictionary[type])
     }, reject);
   });
-}
+};
 
 function fetchTranslations() {
   return new Promise((resolve, reject) => {

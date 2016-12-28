@@ -8,6 +8,7 @@
       controller: 'DashboardController',
       controllerAs: 'dashboardVm',
       title: 'Dashboard',
+      url: '/',
       templateUrl: '/modules/dashboard/views/main.html',
     });
   }
