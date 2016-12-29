@@ -18,6 +18,8 @@ header.navbar.navbar-default
           a(ui-sref='main.book' ui-sref-active='active') #{t('Books')}
         li
           a(ui-sref='main.brand' ui-sref-active='active') #{t('Brand')}
+.container
+  ang-breadcrumb(include-abstract='true')
 div(ui-view='')
 footer
   .container

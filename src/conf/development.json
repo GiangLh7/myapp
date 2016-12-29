@@ -21,6 +21,8 @@
 
   "vendorJs": [
     "app/vendor/angular/angular.js",
+    "app/vendor/angular-sanitize/angular-sanitize.js",
+    "app/vendor/angular-cookies/angular-cookies.js",
     "app/vendor/angular-ui-router/release/angular-ui-router.js",
     "app/vendor/angular-bootstrap/ui-bootstrap-tpls.js",
     "app/vendor/polyglot/build/polyglot.js"
@@ -32,9 +34,13 @@
 
     "app/modules/shared/services/service.module.js",
     "app/modules/shared/services/polyglot.service.js",
+    "app/modules/shared/services/broadcast.service.js",
 
     "app/modules/shared/filters/filters.module.js",
     "app/modules/shared/filters/translate.filter.js",
+
+    "app/modules/shared/widgets/widgets.module.js",
+    "app/modules/shared/widgets/ang-breadcrumb.directive.js",
 
     "app/modules/main/main.controller.js",
 
@@ -44,7 +50,9 @@
 
     "app/modules/book/book.module.js",
     "app/modules/book/book.route.js",
+    "app/modules/book/services/book.service.js",
     "app/modules/book/book.controller.js",
+    "app/modules/book/book.detail.controller.js",
 
     "app/modules/brand/brand.module.js",
     "app/modules/brand/brand.route.js",

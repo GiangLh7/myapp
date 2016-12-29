@@ -26,6 +26,28 @@
   },
   "devDependencies": {
     "babel-preset-env": "^1.1.4",
-    "babelify": "^7.3.0"
+    "babelify": "^7.3.0",
+    "browserify": "^13.0.0",
+    "chai": "^3.4.1",
+    "co": "^4.6.0",
+    "co-mocha": "^1.1.2",
+    "co-request": "^1.0.0",
+    "eslint-config-airbnb-base": "^3.0.1",
+    "eslint-plugin-import": "^1.8.1",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-csso": "^2.0.0",
+    "gulp-eslint": "^2.0.0",
+    "gulp-istanbul": "^0.10.4",
+    "gulp-minify": "0.0.12",
+    "gulp-mocha": "^2.2.0",
+    "gulp-sass": "^2.3.1",
+    "karma": "^0.13.15",
+    "karma-browserify": "^4.4.2",
+    "karma-chai": "*",
+    "karma-mocha": "*",
+    "karma-phantomjs-launcher": "^0.2.1",
+    "mocha": "^2.3.4",
+    "xunit-file": "0.0.9"
   }
 }

@@ -1,9 +1,10 @@
 (function () {
   'use strict';
   angular.module('MainApp', [
+    'ngCookies',
     'ui.router',
     'ui.bootstrap',
-    // 'shared.filters',
+    'shared.widgets',
     'shared.services',
     'shared.filters',
     // 'app.menu',

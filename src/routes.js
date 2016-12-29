@@ -19,6 +19,10 @@ module.exports = [
   { method: 'GET', path: '/modules/{module}/views/{view*}', handler: angularViewsHandler },
   { method: 'GET', path: '/modules/{module*2}/views/{view*}', handler: angularViewsHandler },
   { method: 'GET', path: '/modules/{module}/templates/{view*}', handler: angularViewsHandler },
+  { method: 'GET',
+    path: '/modules/shared/widgets/templates/{view*}',
+    handler: angularViewsHandler,
+  },
   { method: 'GET', path: '/layouts/{layout}.html', handler: angularLayoutsHandler }
 ];
 

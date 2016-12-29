@@ -7,8 +7,8 @@
     $stateProvider.state('main.brand', {
       controller: 'BrandController',
       controllerAs: 'brandVm',
-      title: 'Brand',
-      url: '/brand',
+      title: 'Brands',
+      url: '/brands',
       templateUrl: '/modules/brand/views/main.html',
     });
   }

@@ -2,36 +2,21 @@
   'use strict';
   angular.module('MainApp').config(mainAppConfig);
 
-  mainAppConfig.$inject = ['$qProvider', '$stateProvider', '$urlRouterProvider'];
-  function mainAppConfig($qProvider, $stateProvider, $urlRouterProvider) {
+  mainAppConfig.$inject = ['$qProvider', '$stateProvider', '$urlRouterProvider', '$locationProvider'];
+  function mainAppConfig($qProvider, $stateProvider, $urlRouterProvider, $locationProvider) {
     $qProvider.errorOnUnhandledRejections(false);
     $urlRouterProvider.otherwise('/');
     $stateProvider.state('main', {
       controller: 'MainController',
       controllerAs: 'vm',
       abstract: true,
+      title: 'Home',
       templateUrl: '/layouts/main.html',
       resolve: {
       }
-    })/*.state('main.dashboard', {
-      controller: 'DashboardController',
-      controllerAs: 'dashVm',
-      templateUrl: '/modules/dashboard/views/main.pug views/dashboard.html',
-      url: '/',
-      resolve: {
-      }
-    }).state('main.books', {
-      controller: 'BookController',
-      controllerAs: 'bookVm',
-      templateUrl: 'views/book.html',
-      resolve: {
-      }
-    }).state('main.brands', {
-      controller: 'BrandController',
-      controllerAs: 'brandVm',
-      templateUrl: 'views/brand.html',
-      resolve: {
-      }
-    })*/;
+    });
+
+    // use the HTML5 History API
+    $locationProvider.html5Mode(true);
   }
 }) ();

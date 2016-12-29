@@ -7,13 +7,15 @@ html(lang="en" ng-app="MainApp")
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0')
     link(rel='shortcut icon' type='image/png' href='/public/favicon.png')
-    link(rel='stylesheet' href='/app/vendor/bootstrap/dist/css/bootstrap.css')
-    link(rel='stylesheet' href='/app/styles/main.css')
+    link(rel='stylesheet' href='/app/dist/css/main.css')
     if environment == 'development'
       each src in vendorJsFiles
         script(type='text/javascript' src=src)
       each src in appJsFiles
         script(type='text/javascript' src=src)
+    else
+      script(type='text/javascript' src='app/min/vendor-min.js')
+      script(type='text/javascript' src='app/min/app-min.js')
 
     script(type='text/javascript').
       var polyglot = new Polyglot({allowMissing: true});
