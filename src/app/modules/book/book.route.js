@@ -14,6 +14,13 @@
     .state('main.book-detail', {
       url: '/books/{bookId:string}/{section:string}',
       templateUrl: '/modules/book/views/book-detail.html',
+      title: function (dependencies) {
+        var $state = dependencies.$state;
+        var resolveData = $state.$current.locals.resolve.$$values;
+        var book = resolveData.bookObj;
+        return book ? book.title : 'Book detail';
+      },
+      dependencies: ['$state'],
       breadcrumb: {
         label: '{{$root.title}}',
         parent: 'main.book'
@@ -32,10 +39,6 @@
       return $q(function(resolve, reject) {
         resolve(BookService.getBook($stateParams.bookId));
       });
-    }
-
-    function bookTitleResolve($scope) {
-      return bookObj.title;
     }
   }
 }) ();

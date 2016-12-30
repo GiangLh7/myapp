@@ -2,6 +2,6 @@
   angular.module('shared.services').factory('PolyglotService', PolyglotService);
   
   function PolyglotService() {
-    return Polyglot;
+    return new Polyglot();
   }
 }) ();

@@ -1,5 +1,6 @@
-ul.breadcrumb
-  li(ng-repeat='step in vm.steps' ng-class='{active: $last}' ng-switch='$last || !!step.abstract')
-    a(ng-switch-when='false' href='{{step.breadcrumbLink}}') {{step.breadcrumbLabel}}
-    span(ng-switch-when='true') {{step.breadcrumbLabel}}
-    span.divider(ng-hide='$last')
+.container.visible-desktop.hidden-phone.hidden-tablet
+  ul.breadcrumb
+    li(ng-repeat='step in vm.steps' ng-class='{active: $last}' ng-switch='$last || !!step.abstract')
+      a(ng-switch-when='false' href='{{step.breadcrumbLink}}') {{step.breadcrumbLabel}}
+      span(ng-switch-when='true') {{step.breadcrumbLabel}}
+      span.divider(ng-hide='$last')

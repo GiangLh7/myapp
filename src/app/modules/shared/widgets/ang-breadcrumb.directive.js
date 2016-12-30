@@ -12,8 +12,8 @@
     var directive = {
       restrict: 'AE',
       scope: {
-        includeAbstract: '@',
-        callback: '&'
+        includeAbstract: '@?',
+        prefixStateName: '@?'
       },
       controllerAs: 'vm',
       controller: controller,
@@ -37,13 +37,13 @@
           var parseLabel = $interpolate(step.breadcrumb.label);
           step.breadcrumbLabel = parseLabel($scope);
         } else {
-          var title = (typeof step.title === 'function') ? step.title($scope) : step.title;
-          step.breadcrumbLabel = title || step.name;
+          var parseTitle = $interpolate(step.title);
+          step.breadcrumbLabel = parseTitle($scope);
         }
       });
     }
 
-    function getStatesChain(exitOnFirst) { // Deliberately undocumented param, see getLastStep
+    function getStatesChain(exitOnFirst) {
       var chain = [];
 
       // From current state to the root

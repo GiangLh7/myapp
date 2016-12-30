@@ -1,4 +1,11 @@
 .context-wrap
-  .container.visible-desktop.hidden-phone.hidden-tablet
-    h1 {{vm.book.title}}
-    img(src='{{vm.book.cover}}')
+  .container
+    article.product
+      section.product__head
+        section.product__image
+          img(src='{{vm.book.cover}}')
+        section.product__details
+          h1 {{vm.book.title}}
+      section.product__info
+
+

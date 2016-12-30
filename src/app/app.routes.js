@@ -8,15 +8,26 @@
 
     function attachStateLoadingRules() {
       $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState) {
-        $rootScope.title = toState.title;
+        if (toState.title && typeof(toState.title) === 'function') {
+          var dependencies = {};
+          var dependencyNames = toState.dependencies;
+          if (dependencyNames) {
+            for (var i = 0; i < dependencyNames.length; i++) {
+              var dependencyName = dependencyNames[i];
+              dependencies[dependencyName] = $injector.get(dependencyName);
+            }
+          }
+          $rootScope.title = PolyglotService.t(toState.title(dependencies));
+        } else {
+          $rootScope.title = PolyglotService.t(toState.title);
+        }
         BroadcastService.broadcast(BroadcastService.eventNames.StateChangedEvent, {toState: toState, fromState: fromState});
         if (toState.name !== 'error') {
           $cookies.putObject('lastSuccessState', { name: toState.name, params: toParams });
         }
       });
 
-      $rootScope.$on('$stateChangeError',
-        function(event, toState, toParams, fromState, fromParams, error) {
+      $rootScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, error) {
           // This event is happened with resolve functions.
           // Here we only care about error codes 401: unauthorized resources and 500: server or application errors
           var status = error ? error.status : 500;
